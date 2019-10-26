@@ -46,7 +46,9 @@ public class DefinePhase extends JavaParserBaseListener {
         String methodName = ctx.IDENTIFIER().getText();
         Symbol.Type retType = ctx.typeTypeOrVoid().getText().equals("String") ? Symbol.Type.tString : Symbol.Type.tNotString;
         FunctionSymbol function = new FunctionSymbol(methodName, retType, currentScope);
-        classMap.get(className).add(function);
+        if(classMap.get(className) != null){
+            classMap.get(className).add(function);
+        }
         currentScope.define(function);
         saveScope(ctx, function);
         currentScope = function;

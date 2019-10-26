@@ -7,14 +7,17 @@ import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.*;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 
 public class CheckTool {
 
-    public void process(String[] args) throws Exception {
+    public void process(String args) throws Exception {
         String inputFile = null;
-        if ( args.length>0 ) inputFile = args[0];
+        if ( args.length()>0 && args.endsWith(".java")) {
+            inputFile = args;
+        }else return;
         InputStream is = System.in;
         if ( inputFile!=null ) {
             is = new FileInputStream(inputFile);
@@ -40,7 +43,18 @@ public class CheckTool {
         walker.walk(check, tree);
     }
 
+    public void checkFile(File file) throws Exception{
+        new CheckTool().process(file.getAbsolutePath());
+        File[] children = file.listFiles();
+        if(children != null){
+            for(File child: children){
+                checkFile(child);
+            }
+        }
+
+    }
+
     public static void main(String[] args) throws Exception {
-        new CheckTool().process(args);
+        new CheckTool().checkFile(new File(args[0]));
     }
 }

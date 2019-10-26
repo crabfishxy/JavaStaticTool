@@ -92,10 +92,12 @@ public class FindPhase extends JavaParserBaseListener {
         if(classInstance.get(name) != null || classMap.containsKey(name)){
             // get class name
             if(classInstance.get(name) != null)name = classInstance.get(name);
-            String methodName = ctx.methodCall().getChild(0).getText();
-            for(FunctionSymbol method: classMap.get(name)){
-                if(method.getName().equals(methodName)){
-                    expressionMap.put(ctx, method.getType());
+            if(ctx.methodCall() != null){
+                String methodName = ctx.methodCall().getChild(0).getText();
+                for(FunctionSymbol method: classMap.get(name)){
+                    if(method.getName().equals(methodName)){
+                        expressionMap.put(ctx, method.getType());
+                    }
                 }
             }
         }
