@@ -1,0 +1,13 @@
+class Solution {
+    public static void main(String[] args)
+    {
+        String s, s1 = "123";
+        s == s1;
+         while(true){
+            String s3, s4 = "ttt";
+            s3 == s4;
+         }
+         int s3 = 0;
+         int s4 = 0;
+    }
+}
