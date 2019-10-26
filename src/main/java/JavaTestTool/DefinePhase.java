@@ -32,6 +32,12 @@ public class DefinePhase extends JavaParserBaseListener {
         saveScope(ctx, classSymbol);
         currentScope = classSymbol;
     }
+    @Override
+    public void exitClassDeclaration(JavaParser.ClassDeclarationContext ctx) {
+        currentScope = currentScope.getEnclosingScope();
+    }
+
+
 
     @Override
     public void enterMethodDeclaration(JavaParser.MethodDeclarationContext ctx) {
@@ -44,14 +50,27 @@ public class DefinePhase extends JavaParserBaseListener {
         currentScope = function;
     }
 
-//    @Override
-//    public void enterBlock(JavaParser.BlockContext ctx) {
-//        // enter local scope, like for loop or just {}
-//        if(!(ctx.getParent() instanceof JavaParser.MethodBodyContext)){
-//            currentScope = new LocalScope(currentScope);
-//            saveScope(ctx, currentScope);
-//        }
-//    }
+    @Override
+    public void exitMethodDeclaration(JavaParser.MethodDeclarationContext ctx) {
+        currentScope = currentScope.getEnclosingScope();
+    }
+
+    @Override
+    public void enterBlock(JavaParser.BlockContext ctx) {
+        // enter local scope, like for loop or just {}
+        if(!(ctx.getParent() instanceof JavaParser.MethodBodyContext)){
+            currentScope = new LocalScope(currentScope);
+            saveScope(ctx, currentScope);
+        }
+    }
+
+    @Override
+    public void exitBlock(JavaParser.BlockContext ctx) {
+        // enter local scope, like for loop or just {}
+        if(!(ctx.getParent() instanceof JavaParser.MethodBodyContext)){
+            currentScope = currentScope.getEnclosingScope();
+        }
+    }
 
     @Override
     public void enterLocalVariableDeclaration(JavaParser.LocalVariableDeclarationContext ctx) {

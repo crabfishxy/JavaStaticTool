@@ -49,21 +49,21 @@ public class FindPhase extends JavaParserBaseListener {
         currentScope = currentScope.getEnclosingScope();
     }
 
-//    @Override
-//    public void enterBlock(JavaParser.BlockContext ctx) {
-//        // enter local scope, like for loop or just {}
-//        if(!(ctx.getParent() instanceof JavaParser.MethodBodyContext)){
-//            currentScope = scopes.get(ctx);
-//        }
-//    }
-//
-//    @Override
-//    public void exitBlock(JavaParser.BlockContext ctx) {
-//        // enter local scope, like for loop or just {}
-//        if(!(ctx.getParent() instanceof JavaParser.MethodBodyContext)){
-//            currentScope = currentScope.getEnclosingScope();
-//        }
-//    }
+    @Override
+    public void enterBlock(JavaParser.BlockContext ctx) {
+        // enter local scope, like for loop or just {}
+        if(!(ctx.getParent() instanceof JavaParser.MethodBodyContext)){
+            currentScope = scopes.get(ctx);
+        }
+    }
+
+    @Override
+    public void exitBlock(JavaParser.BlockContext ctx) {
+        // enter local scope, like for loop or just {}
+        if(!(ctx.getParent() instanceof JavaParser.MethodBodyContext)){
+            currentScope = currentScope.getEnclosingScope();
+        }
+    }
 
     @Override
     public void enterSingleExpression(JavaParser.SingleExpressionContext ctx) {

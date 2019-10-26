@@ -6,6 +6,8 @@ class Solution {
          while(true){
             String s3, s4 = "ttt";
             s3 == s4;
+            "123" == "456";
+            s3 == "abc";
          }
          int s3 = 0;
          int s4 = 0;
