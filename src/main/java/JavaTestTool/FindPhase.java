@@ -17,11 +17,13 @@ public class FindPhase extends JavaParserBaseListener {
     Scope currentScope;
     Map<String, List<FunctionSymbol>> classMap;
     ParseTreeProperty<Symbol.Type> expressionMap;
+    Map<String, String> classInstance;
 
-    public FindPhase(GlobalScope globals, ParseTreeProperty<Scope> scopes, Map<String, List<FunctionSymbol>> classMap){
+    public FindPhase(GlobalScope globals, ParseTreeProperty<Scope> scopes, Map<String, List<FunctionSymbol>> classMap, Map<String, String> classInstance){
         this.scopes = scopes;
         this.globals = globals;
         this.classMap = classMap;
+        this.classInstance = classInstance;
         expressionMap = new ParseTreeProperty<>();
     }
     @Override
@@ -80,6 +82,23 @@ public class FindPhase extends JavaParserBaseListener {
 
             }
         }
+
+    }
+
+
+    @Override
+    public void exitCallExpression(JavaParser.CallExpressionContext ctx) {
+        String name = ctx.expression().getText();
+        if(classInstance.get(name) != null || classMap.containsKey(name)){
+            // get class name
+            if(classInstance.get(name) != null)name = classInstance.get(name);
+            String methodName = ctx.methodCall().getChild(0).getText();
+            for(FunctionSymbol method: classMap.get(name)){
+                if(method.getName().equals(methodName)){
+                    expressionMap.put(ctx, method.getType());
+                }
+            }
+        }
     }
 
     public boolean checkExpression(JavaParser.ExpressionContext ctx){
@@ -89,5 +108,13 @@ public class FindPhase extends JavaParserBaseListener {
 
     void saveExpression(ParserRuleContext ctx, Symbol.Type type){
         expressionMap.put(ctx, type);
+    }
+
+    boolean findStringMethod(String className){
+        List<FunctionSymbol> methodList = classMap.get(className);
+        for(FunctionSymbol method: methodList){
+            if(method.getType() == Symbol.Type.tString)return true;
+        }
+        return false;
     }
 }

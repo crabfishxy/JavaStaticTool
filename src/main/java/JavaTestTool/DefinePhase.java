@@ -16,6 +16,7 @@ public class DefinePhase extends JavaParserBaseListener {
     GlobalScope globals;
     Scope currentScope;
     Map<String, List<FunctionSymbol>> classMap = new HashMap<>();
+    Map<String, String> classInstance = new HashMap<>();
 
     @Override
     public void enterCompilationUnit(JavaParser.CompilationUnitContext ctx) {
@@ -45,6 +46,7 @@ public class DefinePhase extends JavaParserBaseListener {
         String methodName = ctx.IDENTIFIER().getText();
         Symbol.Type retType = ctx.typeTypeOrVoid().getText().equals("String") ? Symbol.Type.tString : Symbol.Type.tNotString;
         FunctionSymbol function = new FunctionSymbol(methodName, retType, currentScope);
+        classMap.get(className).add(function);
         currentScope.define(function);
         saveScope(ctx, function);
         currentScope = function;
@@ -83,6 +85,12 @@ public class DefinePhase extends JavaParserBaseListener {
                     type = Symbol.Type.tString;
                     break;
                 default:
+                    // class instance
+                    if(classMap.containsKey(typeName)){
+                        for(int i = 0; i < ctx.variableDeclarators().variableDeclarator().size(); i ++){
+                            classInstance.put(ctx.variableDeclarators().variableDeclarator().get(i).getText(), typeName);
+                        }
+                    }
                     type = Symbol.Type.tNotString;
                     break;
             }

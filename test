@@ -1,15 +1,17 @@
 class Solution {
+
+    public String fun1(){
+        return "123";
+    }
+    public String fun2(){
+        return "abc";
+    }
+
     public static void main(String[] args)
     {
         String s, s1 = "123";
         s == s1;
-         while(true){
-            String s3, s4 = "ttt";
-            s3 == s4;
-            "123" == "456";
-            s3 == "abc";
-         }
-         int s3 = 0;
-         int s4 = 0;
+        Solution solution;
+        solution.fun1() == solution.fun2();
     }
 }

@@ -32,7 +32,7 @@ public class CheckTool {
         DefinePhase def = new DefinePhase();
         walker.walk(def, tree);
         // create next phase and feed symbol table info from def to ref phase
-        FindPhase find = new FindPhase(def.globals, def.scopes, def.classMap);
+        FindPhase find = new FindPhase(def.globals, def.scopes, def.classMap, def.classInstance);
         walker = new ParseTreeWalker();
         walker.walk(find, tree);
         walker = new ParseTreeWalker();
