@@ -18,6 +18,7 @@ public class CheckTool {
         if ( args.length()>0 && args.endsWith(".java")) {
             inputFile = args;
         }else return;
+        System.out.println("Start parsing " + args + ": >>>>>>>>>>>>>");
         InputStream is = System.in;
         if ( inputFile!=null ) {
             is = new FileInputStream(inputFile);
@@ -39,7 +40,7 @@ public class CheckTool {
         walker = new ParseTreeWalker();
         walker.walk(find, tree);
         walker = new ParseTreeWalker();
-        CheckPhase check = new CheckPhase(find.expressionMap);
+        CheckPhase check = new CheckPhase(find.expressionMap, find.classMap);
         walker.walk(check, tree);
     }
 

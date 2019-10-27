@@ -10,12 +10,11 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/JavaTestTool/CheckPhase.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/JavaTestTool/CheckPhase.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/JavaTestTool/CheckTool.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/JavaTestTool/CheckTool.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/JavaTestTool/DefinePhase.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/JavaTestTool/DefinePhase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/JavaTestTool/FindPhase.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/JavaTestTool/FindPhase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/JavaTestTool/CheckPhase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/JavaTestTool/CheckPhase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/JavaTestTool/CheckTool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/JavaTestTool/CheckTool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/JavaTestTool/DefinePhase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/JavaTestTool/DefinePhase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/JavaTestTool/FindPhase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/JavaTestTool/FindPhase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test" beforeDir="false" afterPath="$PROJECT_DIR$/test.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,7 +55,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/joda" />
+    <property name="last_opened_file_path" value="$USER_HOME$/IdeaProjects/Test" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -95,7 +94,7 @@
     <configuration name="CheckTool" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="JavaTestTool.CheckTool" />
       <module name="Assignment4.main" />
-      <option name="PROGRAM_PARAMETERS" value="joda" />
+      <option name="PROGRAM_PARAMETERS" value="test.java" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="JavaTestTool.*" />
@@ -149,7 +148,8 @@
       <workItem from="1571803376541" duration="149000" />
       <workItem from="1571803540937" duration="32944000" />
       <workItem from="1571981964854" duration="18951000" />
-      <workItem from="1572102244648" duration="596000" />
+      <workItem from="1572102244648" duration="3052000" />
+      <workItem from="1572122410214" duration="3907000" />
     </task>
     <servers />
   </component>
@@ -179,12 +179,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/JavaTestTool/CheckPhase.java</url>
-          <line>16</line>
+          <line>24</line>
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/JavaTestTool/CheckTool.java</url>
-          <line>41</line>
+          <line>42</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -209,13 +209,18 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/JavaTestTool/CheckTool.java</url>
-          <line>46</line>
+          <line>47</line>
           <option name="timeStamp" value="32" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/JavaTestTool/CheckTool.java</url>
           <line>17</line>
           <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/JavaTestTool/CheckPhase.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="34" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

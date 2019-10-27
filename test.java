@@ -7,11 +7,16 @@ class Solution {
         return "abc";
     }
 
+    public boolean equals(){
+        return true;
+    }
+
     public static void main(String[] args)
     {
-        String s, s1 = "123";
-        s == s1;
         Solution solution;
         solution.fun1() == solution.fun2();
+        int ss = 0;
+        for(String s = "abc";; s== ss){
+        }
     }
 }
