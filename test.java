@@ -11,12 +11,19 @@ class Solution {
         return true;
     }
 
+    public int hashCode(){
+
+    }
+
     public static void main(String[] args)
     {
         Solution solution;
         solution.fun1() == solution.fun2();
-        int ss = 0;
-        for(String s = "abc";; s== ss){
+        if(true){
+            //comment
+            int a;
+        }else if(true){
+
         }
     }
 }

@@ -44,4 +44,15 @@ public class CheckPhase extends JavaParserBaseListener {
             System.out.println("Line " + ctx.start.getLine() + ": " + "class " + className + " Class defines equals() but not hashCode()");
         }
     }
+
+    @Override
+    public void exitStatement(JavaParser.StatementContext ctx) {
+        // if statement
+        if(ctx.getChild(0).getText().equals("if")){
+            // only "{}"
+            if(ctx.getChild(2).getChild(0).getChildCount() == 2){
+                System.out.println("Line " + ctx.start.getLine() + ": " + " Avoid empty if statement.");
+            }
+        }
+    }
 }

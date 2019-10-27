@@ -11,10 +11,8 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/JavaTestTool/CheckPhase.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/JavaTestTool/CheckPhase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/JavaTestTool/CheckTool.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/JavaTestTool/CheckTool.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/JavaTestTool/CheckPhase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/JavaTestTool/CheckPhase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/JavaTestTool/CheckTool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/JavaTestTool/CheckTool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test" beforeDir="false" afterPath="$PROJECT_DIR$/test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/test.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -149,7 +147,7 @@
       <workItem from="1571803540937" duration="32944000" />
       <workItem from="1571981964854" duration="18951000" />
       <workItem from="1572102244648" duration="3052000" />
-      <workItem from="1572122410214" duration="3907000" />
+      <workItem from="1572122410214" duration="6614000" />
     </task>
     <servers />
   </component>
@@ -176,11 +174,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/JavaTestTool/FindPhase.java</url>
           <line>33</line>
           <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/JavaTestTool/CheckPhase.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/JavaTestTool/CheckTool.java</url>
@@ -219,8 +212,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/JavaTestTool/CheckPhase.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="34" />
+          <line>50</line>
+          <option name="timeStamp" value="35" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
